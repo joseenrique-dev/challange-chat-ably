@@ -1,14 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+import { Route, BrowserRouter as Router } from "react-router-dom";
+import LoginComponent from "./login/login";
+import SignupComponent from "./signup/signup";
+import DashboardComponent from "./dashboard/dashboard";
+
+const routing = (
+  <Router>
+    <div id="routing-container" >
+      <Route path="/login" component={LoginComponent}></Route>
+      <Route path="/signup" component={SignupComponent}></Route>
+      <Route path="/dashboard" component={DashboardComponent}></Route>
+    </div>
+  </Router>
+)
+
+ReactDOM.render( routing , document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
