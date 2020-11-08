@@ -1,0 +1,26 @@
+[
+    {
+        "chats":[
+            {
+                "receiverHasRead":false,
+                "users":[
+                    "otipip90@gmail.com",
+                    "lolo@gmail.com"
+                ],
+                "messages":[
+                    {
+                        "message":"Test one", "sender":"otipip90@gmail.com"
+                    },
+                    {
+                        "message":"Test two", "sender":"lolo@gmail.com"
+                    }
+                ]
+
+            }
+        ],
+        "email":"otipip90@gmail.com",
+        "newChatFormVisible":false,
+        "selectedChat":null
+    }
+]
+    
