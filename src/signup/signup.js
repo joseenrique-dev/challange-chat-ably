@@ -24,7 +24,6 @@ class SignupComponent extends React.Component {
     }
 
     render(){
-        console.log('PROPSSS', this.props)
         const { classes } = this.props;
         
         return (

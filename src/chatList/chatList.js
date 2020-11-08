@@ -22,7 +22,6 @@ class ChatListComponent extends React.Component {
     
     const { classes } = this.props;
     
-    
     if( this.props.chats.length > 0 ){
 
       return(

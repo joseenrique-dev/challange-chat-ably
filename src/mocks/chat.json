@@ -9,10 +9,26 @@
                 ],
                 "messages":[
                     {
-                        "message":"This is the first msg from pipito", "sender":"otipip90@gmail.com"
+                        "message":"Hy bro, this is a first text message !!!", "sender":"otipip90@gmail.com"
                     },
                     {
-                        "message":"This is the secound message from lolo", "sender":"lolo@gmail.com"
+                        "message":"Lorem ipsu Lorem ipsuLorem ipsuLorem ipsuLorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu", "sender":"otipip90@gmail.com"
+                    },{
+                        "message":"Yes I can but Lorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu", "sender":"otipip90@gmail.com"
+                    },
+                    {
+                        "message":"Yeaaa I'm here, how are you?", "sender":"lolo@gmail.com"
+                    },
+                    {
+                        "message":"Hy bro, this is a first text message !!!", "sender":"otipip90@gmail.com"
+                    },
+                    {
+                        "message":"Lorem ipsu Lorem ipsuLorem ipsuLorem ipsuLorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu", "sender":"otipip90@gmail.com"
+                    },{
+                        "message":"Yes I can but Lorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu", "sender":"otipip90@gmail.com"
+                    },
+                    {
+                        "message":"Yeaaa I'm here, how are you?", "sender":"lolo@gmail.com"
                     }
                 ]
 

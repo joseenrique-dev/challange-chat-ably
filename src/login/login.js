@@ -72,12 +72,9 @@ class LoginComponent extends React.Component {
 
     submitLogin = (e) => {
         e.preventDefault(); // This is to prevent the automatic refreshing of the page on submit.
-        console.log()
-
         //TODO:Handle with Ably sdk
         
         //Simulate success signUp
-        console.log("OKOKOKOK");
         console.log("To Know state values at this moment...", this.state);
         this.props.history.push("/dashboard");
         
