@@ -4,21 +4,26 @@ import { withStyles } from '@material-ui/core/styles';
 
 class ChatViewComponent extends React.Component {
 
-  
+  componentDidUpdate = () =>{
+    const container = document.getElementById('chatview-container');
+    if ( container ){
+        container.scrollTo( 0, container.scrollHeight )
+    }
+  }
 
   render() {
 
     const { classes, chat, user } = this.props;
-    console.log("VALUE 100000001-->", { classes, chat, user })
     if( chat === undefined ){
         return(<main className={classes.content}> vacio </main>)
     }else{
         return (<div>
-            <div></div>
-            <main className={classes.content}>
+            <div className={classes.chatHeader}>
+                Are you connected with: <strong>{chat.users.filter(usr => usr !== user)}</strong>
+            </div>
+            <main className={classes.content} id="chatview-container">
                 {
                     chat.messages.map((msg, index)=>{
-                        console.log("MSGGG", msg)
                         return (
                             <div 
                                 key={index} 
