@@ -9,10 +9,10 @@
                 ],
                 "messages":[
                     {
-                        "message":"Test one", "sender":"otipip90@gmail.com"
+                        "message":"This is the first msg from pipito", "sender":"otipip90@gmail.com"
                     },
                     {
-                        "message":"Test two", "sender":"lolo@gmail.com"
+                        "message":"This is the secound message from lolo", "sender":"lolo@gmail.com"
                     }
                 ]
 
