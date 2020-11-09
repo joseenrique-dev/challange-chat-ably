@@ -5,6 +5,7 @@ import styles from './styles';
 import { Button, withStyles } from '@material-ui/core';
 import chatMock from "../mocks/chat.json"
 import ChatViewComponent from "../chatview/chatview"
+import ChatTextBoxComponent from "../chattextbox/chattextbox"
 // I need to investigate why sometimes
 // two messages will send instead of just
 // one. I dont know if there are two instances
@@ -32,22 +33,24 @@ class DashboardComponent extends React.Component {
       chats: chatMock[0].chats,
       email: chatMock[0].email
     })
-    
-    
   }
+  
 
   selectChat =( chatIndex ) => {
     this.setState({ selectedChat: chatIndex})
   }
   newChatBtnClicked = () => this.setState({ newChatFormVisible: true, selectedChat: null });
-//   newChatBtnClicked = () => {
-// debugger
-//     this.setState({ newChatFormVisible: true, selectedChat: null })
-//     console.log("STATE", this.state)
-//   };
+
   signOut = ()=>{
     //TODO:SignOutFncHere...
   }
+
+
+  submitMessageFn = ( msg ) =>{
+    console.log('MSG from chattextbox', msg)
+    //TODO: Send Message here !!!! :)    
+  }
+
   render() {
     const { classes } = this.props;
     console.log("CHECK this.state.newChatFormVisible", this.state.newChatFormVisible)
@@ -68,6 +71,12 @@ class DashboardComponent extends React.Component {
                     user={this.state.email}
                     chat={this.state.chats[this.state.selectedChat]}
                   />
+              }
+              {
+                (this.state.selectedChat !== null &&
+                !this.state.newChatFormVisible) ?
+                <ChatTextBoxComponent submitMessageFn={this.submitMessageFn}/> :
+                null
               }
               <Button className={classes.signOutBtn} onClick={this.signOut}>Sign Out</Button>
         </div>
