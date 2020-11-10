@@ -1,18 +1,13 @@
 import React from 'react';
-
-import ChatListComponent from '../chatList/chatList';
-import styles from './styles';
 import { Button, withStyles } from '@material-ui/core';
-import chatMock from "../mocks/chat.json"
-import ChatViewComponent from "../chatview/chatview"
-import ChatTextBoxComponent from "../chattextbox/chattextbox"
-// I need to investigate why sometimes
-// two messages will send instead of just
-// one. I dont know if there are two instances
-// of the chat box component or what...
+import styles from './styles';
 
-// I will be using both .then and async/await
-// in this tutorial to give a feel of both.
+//Components
+import ChatListComponent from '../chatList/chatList';
+import chatMock from "../../mocks/chat.json";
+import ChatViewComponent from "../chatview/chatview";
+import ChatTextBoxComponent from "../chattextbox/chattextbox";
+import AdminMsgComponent from "../adminMsg/adminMsg";
 
 class DashboardComponent extends React.Component {
 
@@ -53,9 +48,11 @@ class DashboardComponent extends React.Component {
 
   render() {
     const { classes } = this.props;
-    console.log("CHECK this.state.newChatFormVisible", this.state.newChatFormVisible)
+    const location = this.props.match.path.split('/')[1]
+   
       return(
         <div>
+              <AdminMsgComponent location={location}/>
               <ChatListComponent 
                 history={this.props.history} 
                 newChatBtnFn={this.newChatBtnClicked}
@@ -65,7 +62,7 @@ class DashboardComponent extends React.Component {
                 selectedChatIndex={this.state.selectedChat} />
             
               {
-                this.state.newChatFormVisible ?
+                location ===  'admin' ?
                   null :
                   <ChatViewComponent
                     user={this.state.email}
@@ -73,10 +70,7 @@ class DashboardComponent extends React.Component {
                   />
               }
               {
-                (this.state.selectedChat !== null &&
-                !this.state.newChatFormVisible) ?
-                <ChatTextBoxComponent submitMessageFn={this.submitMessageFn}/> :
-                null
+                <ChatTextBoxComponent submitMessageFn={this.submitMessageFn}/>
               }
               <Button className={classes.signOutBtn} onClick={this.signOut}>Sign Out</Button>
         </div>

@@ -3,17 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-import { Route, BrowserRouter as Router } from "react-router-dom";
-import LoginComponent from "./login/login";
-import SignupComponent from "./signup/signup";
-import DashboardComponent from "./dashboard/dashboard";
+import { Redirect, Route, BrowserRouter as Router } from "react-router-dom";
+import SignupComponent from "./components/signup/signup";
+import DashboardComponent from "./components/dashboard/dashboard";
 
 const routing = (
   <Router>
     <div id="routing-container" >
-      <Route path="/login" component={LoginComponent}></Route>
-      <Route path="/signup" component={SignupComponent}></Route>
-      <Route path="/dashboard" component={DashboardComponent}></Route>
+      <Route path="/user" component={DashboardComponent}></Route>
+      <Route path="/admin" component={DashboardComponent}></Route>
+      <Route exact path="/signup" component={SignupComponent}></Route>
+      <Route exact path='/' component={() => <Redirect to='/signup' />} />
+      
     </div>
   </Router>
 )
